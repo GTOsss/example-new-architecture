@@ -9,22 +9,21 @@ import {
   ListGroupItem
 } from 'reactstrap'
 import cx from 'classnames'
+import Sidebar from '../../../../components/Sidebar'
+import styles from '../../../../styles/main.scss'
 
-import styles from '../styles.scss'
-import mainStyles from '../../../../styles/main.scss'
+const SidebarItems = [
+  {text: 'Info'},
+  {text: 'Info 2'}
+]
 
 const Home = () => (
   <Container fluid>
     <Row>
-      <Col md={{size: 2}} xs={{size: 12}}  className={cx(["hidden-sm-down"], mainStyles.nopadding)}>
-        <ListGroup className={styles.sidebar} >
-          <ListGroupItem tag="a" href="#" className={cx(styles.listGroupItem, styles.active)}>Info</ListGroupItem>
-          <ListGroupItem tag="a" href="#" className={styles.listGroupItem}>Test requests</ListGroupItem>
-          <ListGroupItem tag="a" href="#" className={styles.listGroupItem}>Menu item 1</ListGroupItem>
-          <ListGroupItem tag="a" href="#" className={styles.listGroupItem}>Menu item 2</ListGroupItem>
-        </ListGroup>
+      <Col md={{size: 2}} xs={{size: 12}}  className={cx(["hidden-sm-down"], styles.nopadding)}>
+        <Sidebar items={SidebarItems}/>
       </Col>
-      <Col md={{size: 10}} sm={{size: 12}} className={mainStyles.nopadding}>
+      <Col md={{size: 10}} sm={{size: 12}} className={styles.nopadding}>
         <Jumbotron>
           <h1 className="display-4">Dashboard</h1>
           <p className="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, enim esse harum id impedit ipsum itaque iusto magnam minus molestias natus nobis placeat praesentium, qui saepe sapiente temporibus tenetur ullam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda cum dolor impedit ipsam iste numquam pariatur porro velit voluptates.</p>

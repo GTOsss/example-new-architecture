@@ -1,7 +1,7 @@
 // ------------------------------------
 // Action types
 // ------------------------------------
-export const GET_USER = 'GET_USER'
+export const GET_USER = 'GET_USER';
 
 // ------------------------------------
 // Actions
@@ -14,7 +14,7 @@ export const getUser = (user) => (
       user
     })
   }
-)
+);
 
 // ------------------------------------
 // Reducer
@@ -23,12 +23,12 @@ const initialState = {
   userName: '',
   firstName: '',
   lastName: ''
-}
+};
 
   export default function userReducer(state = initialState, action) {
   switch (action.type) {
     case GET_USER:
-      return {...action.user}
+      return {...action.user};
     default:
       return state
   }
