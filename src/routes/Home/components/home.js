@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router'
+import Header from '../../../components/Header'
 
-export const HomeView = () => (
+const Home = ({children}) => (
   <div>
-    <Link to='/dashboard'>
-      Dashboard
-    </Link>
+    <Header />
+    {children}
   </div>
-)
+);
 
-export default HomeView
+export default Home

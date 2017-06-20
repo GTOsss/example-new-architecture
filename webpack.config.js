@@ -32,17 +32,30 @@ module.exports = {
           }
         ]
       },
+      // {
+      //   test: /\.sass$|\.scss$/,
+      //   use: ExtractTextPlugin.extract({
+      //     use: ['css-loader', 'sass-loader']
+      //   })
+      // },
       {
-        test: /\.sass$|\.scss$/,
-        use: ExtractTextPlugin.extract({
-          use: ['css-loader', 'sass-loader']
-        })
+        test: /\.scss$/,
+        loaders: [
+          'style-loader?sourceMap',
+          'css-loader?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]',
+          'resolve-url-loader',
+          'sass-loader?sourceMap'
+        ]
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           use: ['css-loader']
         })
+      },
+      {
+        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.png|\.jpe?g|\.gif$/,
+        loader: 'file-loader'
       }
     ]
   },

@@ -1,13 +1,9 @@
-import React from 'react'
 import Home from './Home'
+import React from 'react'
+import { Route } from 'react-router'
 
-const HomeComponent = (
-  <Home content="test" />
+const route = () => (
+  <Route path="dashboard" component={Home} />
 )
-
-const route = {
-  path: 'dashboard',
-  component: HomeComponent
-}
 
 export default route

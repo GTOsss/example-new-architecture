@@ -4,12 +4,13 @@ import { Provider } from 'react-redux'
 import { browserHistory, Router } from 'react-router'
 import createStore from './store/create-store'
 import routes from './routes'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const store = createStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory} children={routes()} />
+    <Router history={browserHistory} children={routes} />
   </Provider>,
   document.getElementById('root')
-)
+);

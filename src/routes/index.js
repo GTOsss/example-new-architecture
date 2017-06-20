@@ -1,18 +1,12 @@
+import React from 'react'
+import { Route, IndexRoute } from 'react-router'
 import Home from './Home'
 import Dashboard from './Dashboard'
 
-export const createRoutes = () => ({
-  path: '/',
-  indexRoute: Home,
-  childRoutes: [
-    {
-      onEnter(nextState, redirect, done) {
-      },
-      childRoutes: [
-        Dashboard
-      ]
-    }
-  ]
-})
+export const createRoutes = () => (
+  <Route path="/" component={Home}>
+    {Dashboard()}
+  </Route>
+)
 
-export default createRoutes
+export default createRoutes()
